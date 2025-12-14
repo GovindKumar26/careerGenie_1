@@ -33,20 +33,22 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">
+          <h2 className="text-4xl font-bold tracking-tighter text-center mb-16 neon-text">
             Powerful Features for Your Career Growth
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-2 hover:border-primary transition-colors duration-300"
+                className="border border-primary/20 bg-card/50 backdrop-blur-sm card-hover rounded-2xl"
               >
-                <CardContent className="pt-6 text-center flex flex-col items-center">
+                <CardContent className="pt-8 pb-6 text-center flex flex-col items-center">
                   <div className="flex flex-col items-center justify-center">
-                    {feature.icon}
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">
+                    <div className="mb-4 p-3 rounded-xl bg-primary/10 border border-primary/20">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -58,16 +60,16 @@ export default function LandingPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+      <section className="w-full py-16 md:py-32 bg-muted/30 backdrop-blur-sm">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">50+</h3>
-              <p className="text-muted-foreground">Industries Covered</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto text-center">
+            <div className="flex flex-col items-center justify-center space-y-3 p-6 rounded-2xl bg-card/30 border border-primary/20 card-hover">
+              <h3 className="text-5xl font-bold neon-text">50+</h3>
+              <p className="text-muted-foreground text-sm">Industries Covered</p>
             </div>
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <h3 className="text-4xl font-bold">1000+</h3>
-              <p className="text-muted-foreground">Interview Questions</p>
+            <div className="flex flex-col items-center justify-center space-y-3 p-6 rounded-2xl bg-card/30 border border-primary/20 card-hover">
+              <h3 className="text-5xl font-bold neon-text">1000+</h3>
+              <p className="text-muted-foreground text-sm">Interview Questions</p>
             </div>
             <div className="flex flex-col items-center justify-center space-y-2">
               <h3 className="text-4xl font-bold">95%</h3>

@@ -16,37 +16,33 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
+import Logo from "./logo";
+import { ThemeToggle } from "./theme-toggle";
 
 export default async function Header() {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-          <Image
-            src={"/logo.png"}
-            alt="Sensai Logo"
-            width={300}
-            height={100}
-            className="h-16 py-1 w-auto object-contain"
-          />
+    <header className="fixed top-0 w-full border-b border-primary/20 glass-effect neon-glow z-50">
+      <nav className="container mx-auto px-6 h-24 flex items-center justify-between">
+        <Link href="/" className="transition-transform hover:scale-105 duration-300">
+          <Logo />
         </Link>
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-2 md:space-x-4">
+          <ThemeToggle />
           <SignedIn>
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2"
+                className="hidden md:inline-flex items-center gap-2 border-primary/30 hover:border-primary hover:neon-glow"
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Industry Insights
               </Button>
-              <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+              <Button variant="ghost" className="md:hidden w-10 h-10 p-0 hover:neon-glow">
                 <LayoutDashboard className="h-4 w-4" />
               </Button>
             </Link>
